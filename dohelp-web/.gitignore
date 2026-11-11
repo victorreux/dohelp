@@ -1,0 +1,10 @@
+# Archivos generados por Maven
+target/
+
+# Configuracion local con la contrasena de MySQL (no se sube a GitHub)
+src/main/resources/db.properties
+
+# Archivos del editor
+.idea/
+*.iml
+.vscode/

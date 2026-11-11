@@ -1,0 +1,137 @@
+/* DOHELP - estilos del modulo de anuncios */
+:root {
+    --naranja: #F26B21;
+    --naranja-oscuro: #B3471B;
+    --azul-noche: #1B2A41;
+    --crema: #FFF8F1;
+    --verde: #2BB673;
+    --gris-texto: #4A5568;
+    --borde: #E7DED4;
+    --rojo: #C53030;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--crema);
+    color: var(--azul-noche);
+    line-height: 1.5;
+}
+
+a { color: var(--naranja-oscuro); }
+
+/* Barra superior */
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 24px;
+    background: var(--azul-noche);
+}
+.marca { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.marca-icono { font-size: 26px; }
+.marca-texto { color: #fff; font-size: 24px; font-weight: 600; }
+.marca-texto b { color: var(--naranja); }
+.barra nav { display: flex; align-items: center; gap: 16px; }
+.barra nav a { color: #fff; text-decoration: none; font-weight: 500; }
+
+.contenido { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+
+.titulo-seccion h1 { margin: 0 0 4px; font-size: 30px; }
+.titulo-seccion p { margin: 0 0 20px; color: var(--gris-texto); }
+
+/* Botones */
+.boton {
+    display: inline-block;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.boton-principal { background: var(--naranja); color: var(--azul-noche) !important; }
+.boton-principal:hover { background: #ff7d36; }
+.boton-secundario { background: #fff; color: var(--azul-noche); border: 1px solid var(--borde); }
+.boton-peligro { background: #fff; color: var(--rojo); border: 1px solid #f1c4c4; }
+.boton-pequeno { padding: 5px 12px; font-size: 14px; background: #fff; color: var(--azul-noche); border: 1px solid var(--borde); }
+.boton-pequeno.boton-peligro { color: var(--rojo); }
+
+/* Avisos */
+.aviso { padding: 12px 16px; border-radius: 10px; margin-bottom: 18px; font-weight: 500; }
+.aviso-ok { background: #E3F6EC; color: #1E7A50; border: 1px solid #b6e6cc; }
+.aviso-error { background: #FDECEC; color: var(--rojo); border: 1px solid #f1c4c4; }
+
+/* Filtros y tabla */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 14px 16px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+.filtros label { font-weight: 600; }
+.filtros select { padding: 8px 12px; border: 1px solid #D4C9BD; border-radius: 8px; font: inherit; background: #fff; max-width: 100%; }
+.contador { color: var(--gris-texto); margin: 16px 0 8px; }
+.vacio { background: #fff; padding: 24px; border-radius: 12px; text-align: center; }
+
+.tabla-contenedor { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+.tabla th { background: var(--azul-noche); color: #fff; text-align: left; padding: 10px 12px; font-weight: 600; }
+.tabla td { padding: 10px 12px; border-bottom: 1px solid var(--borde); vertical-align: middle; }
+.tabla tr:last-child td { border-bottom: none; }
+.acciones { display: flex; gap: 6px; }
+.acciones form { margin: 0; }
+
+/* Etiquetas de estado */
+.etiqueta { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 13px; font-weight: 600; }
+.etiqueta-activo { background: #E3F6EC; color: #1E7A50; }
+.etiqueta-pendiente { background: #FFF1D6; color: #8A5A00; }
+.etiqueta-pausado { background: #E8EDF3; color: #42526B; }
+.etiqueta-rechazado { background: #FDECEC; color: var(--rojo); }
+
+/* Tarjetas, detalle y formulario */
+.volver { display: inline-block; margin-bottom: 14px; }
+.tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 16px; padding: 28px; }
+.tarjeta h1 { margin-top: 0; }
+.detalle-encabezado { display: flex; justify-content: space-between; align-items: center; }
+.id-anuncio { color: var(--gris-texto); }
+.descripcion { font-size: 17px; color: var(--gris-texto); }
+.datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 22px 0; }
+.datos div { background: var(--crema); border-radius: 10px; padding: 10px 14px; }
+.datos dt { font-size: 13px; color: var(--gris-texto); }
+.datos dd { margin: 0; font-weight: 600; }
+
+.ayuda { color: var(--gris-texto); margin-top: -8px; }
+.formulario label { display: block; font-weight: 600; margin: 14px 0 6px; }
+.formulario input, .formulario select, .formulario textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #D4C9BD;
+    border-radius: 8px;
+    font: inherit;
+    background: #fff;
+}
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus {
+    outline: 2px solid var(--naranja);
+    border-color: var(--naranja);
+}
+.fila { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 16px; }
+.dato-fijo { margin: 14px 0 0; }
+.botones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.botones form { margin: 0; }
+
+.pie { text-align: center; color: var(--gris-texto); font-size: 13px; padding: 20px 16px; border-top: 1px solid var(--borde); }
+
+@media (max-width: 600px) {
+    .barra { padding: 12px 16px; }
+    .tarjeta { padding: 20px; }
+}

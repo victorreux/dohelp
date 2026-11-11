@@ -1,0 +1,6 @@
+# Datos de conexion a MySQL.
+# Cambie la contrasena por la que usa en MySQL Workbench.
+# Este archivo NO se sube a GitHub (esta en .gitignore).
+db.url=jdbc:mysql://localhost:3306/dohelp?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Bogota
+db.usuario=root
+db.contrasena=TU_CONTRASENA

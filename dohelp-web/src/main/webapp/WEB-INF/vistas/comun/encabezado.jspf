@@ -1,0 +1,39 @@
+<%-- Encabezado comun de todas las paginas. Se incluye con la directiva include. --%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOHELP - Gestión de anuncios</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
+</head>
+<body>
+<header class="barra">
+    <a class="marca" href="${pageContext.request.contextPath}/anuncios">
+        <span class="marca-icono">✋</span><span class="marca-texto">Do<b>Help</b></span>
+    </a>
+    <nav>
+        <a href="${pageContext.request.contextPath}/anuncios">Anuncios</a>
+        <a class="boton boton-principal" href="${pageContext.request.contextPath}/anuncios?accion=nuevo">+ Publicar anuncio</a>
+    </nav>
+</header>
+<main class="contenido">
+<%
+    // Mensajes de resultado: los envia el servlet como atributo (error) o parametro (ok)
+    String mensajeError = (String) request.getAttribute("error");
+    String resultado = request.getParameter("ok");
+    String mensajeOk = null;
+    if ("creado".equals(resultado)) {
+        mensajeOk = "El anuncio se publicó correctamente. Queda pendiente de aprobación.";
+    } else if ("actualizado".equals(resultado)) {
+        mensajeOk = "El anuncio se actualizó correctamente.";
+    } else if ("eliminado".equals(resultado)) {
+        mensajeOk = "El anuncio se eliminó correctamente.";
+    }
+%>
+<% if (mensajeOk != null) { %>
+    <div class="aviso aviso-ok"><%= mensajeOk %></div>
+<% } %>
+<% if (mensajeError != null) { %>
+    <div class="aviso aviso-error"><%= co.dohelp.web.Html.escapar(mensajeError) %></div>
+<% } %>

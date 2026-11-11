@@ -1,0 +1,8 @@
+<%-- Pie comun de todas las paginas --%>
+</main>
+<footer class="pie">
+    DOHELP · Módulo de gestión de anuncios · Evidencia GA7-220501096-AA2-EV02 ·
+    Víctor Manuel Ruiz Rojas · SENA <%= java.time.Year.now() %>
+</footer>
+</body>
+</html>
